@@ -9,12 +9,12 @@ import { AccordionModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 import { MenuSampingComponent } from './menu-samping/menu-samping.component';
 import { SelamatDatangComponent } from './selamat-datang/selamat-datang.component';
-import { RekeningComponent } from './rekening/rekening.component';
+import { RekeningModule } from './rekening/rekening.module';
 import { TransferComponent } from './transfer/transfer.component';
 import { ProfilComponent } from './profil/profil.component';
 
 const routingAplikasi: Route[] = [
-  { path: 'rekening', component: RekeningComponent },
+  { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full' },
   { path: 'transfer', component: TransferComponent },
   { path: 'profil', component: ProfilComponent },
   { path: '**', component: SelamatDatangComponent }
@@ -25,7 +25,6 @@ const routingAplikasi: Route[] = [
     AppComponent,
     MenuSampingComponent,
     SelamatDatangComponent,
-    RekeningComponent,
     TransferComponent,
     ProfilComponent
   ],
@@ -34,7 +33,8 @@ const routingAplikasi: Route[] = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routingAplikasi),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    RekeningModule
   ],
   providers: [],
   bootstrap: [AppComponent]
