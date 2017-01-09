@@ -1,1 +1,21 @@
 <h1>Daftar Rekening</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nomer Rekening</th>
+      <th>Nama Rekening</th>
+      <th>&nbsp;</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let r of daftarRekening">
+        <td>{{r.nomer}}</td>
+        <td>{{r.nama}}</td>
+        <td>
+          <button class="btn btn-sm" (click)="tampilkanDetail(r)">
+            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            detail
+          </button>
+        </tbody>
+      </table>

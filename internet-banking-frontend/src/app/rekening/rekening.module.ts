@@ -9,6 +9,7 @@ import { DaftarRekeningComponent } from './daftar-rekening/daftar-rekening.compo
 import { SaldoRekeningComponent } from './saldo-rekening/saldo-rekening.component';
 import { MutasiRekeningComponent } from './mutasi-rekening/mutasi-rekening.component';
 import { PilihanRekeningComponent } from './pilihan-rekening/pilihan-rekening.component';
+import { RekeningService } from './rekening.service';
 
 const routingRekening: Route[] = [
   { path: 'rekening/list', component: DaftarRekeningComponent },
@@ -30,6 +31,9 @@ const routingRekening: Route[] = [
   ],
   exports: [
     PilihanRekeningComponent
+  ],
+  providers: [
+    RekeningService
   ]
 })
 export class RekeningModule { }
