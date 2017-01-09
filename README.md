@@ -9,3 +9,14 @@ Materi:
 * HTTP Request/Response
 * Upload File
 * Authentication
+
+## Studi Kasus ##
+
+Aplikasi Internet Banking.
+
+Fitur :
+
+* Login/Logout
+* Mutasi Rekening
+* Transfer
+* Update Profile
