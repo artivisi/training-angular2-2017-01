@@ -24,6 +24,14 @@ Fitur :
 
 ![Screen Login](catatan/img/info-saldo.jpg)
 
+* Daftar Rekening
+
+![Screen Login](catatan/img/daftar-rekening.jpg)
+
+* Detail Rekening
+
+![Screen Login](catatan/img/detail-rekening.jpg)
+
 * Mutasi Rekening
 
 ![Screen Login](catatan/img/mutasi-rekening.jpg)
@@ -35,3 +43,38 @@ Fitur :
 * Update Profile
 
 ![Screen Login](catatan/img/profile.jpg)
+
+
+## Rancangan Aplikasi ##
+
+Daftar Modul dan Komponen
+
+* Modul Otentikasi
+
+    * Komponen CurrentUser
+    * Service Authentication
+
+* Komponen Navigasi
+
+* Modul Rekening
+
+    * Service Rekening
+    * Komponen Daftar Rekening
+    * Komponen Detail Rekening
+
+* Modul Mutasi
+
+    * Service Mutasi
+    * Komponen Form Pencarian
+    * Komponen Daftar Mutasi
+    * Komponen Detail Mutasi
+
+* Modul Transfer
+
+    * Service Transfer
+    * Komponen Form Transfer
+
+* Modul Profil
+
+    * Service Profil
+    * Komponen Form Profil
