@@ -73,8 +73,14 @@ Daftar Modul dan Komponen
 
     * Service Transfer
     * Komponen Form Transfer
+    * Komponen Konfirmasi Transfer
 
 * Modul Profil
 
     * Service Profil
     * Komponen Form Profil
+    * Komponen Tampilkan Profil
+
+## Arsitektur Aplikasi Angular 2 ##
+
+![Arsitektur Aplikasi Angular 2](catatan/img/arsitektur-aplikasi-angular2.jpg)
