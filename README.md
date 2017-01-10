@@ -84,3 +84,5 @@ Daftar Modul dan Komponen
 ## Arsitektur Aplikasi Angular 2 ##
 
 ![Arsitektur Aplikasi Angular 2](catatan/img/arsitektur-aplikasi-angular2.jpg)
+
+* [Cara membuat modul](catatan/membuat-modul.md)
