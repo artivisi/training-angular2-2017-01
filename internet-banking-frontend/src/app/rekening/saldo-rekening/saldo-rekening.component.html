@@ -2,6 +2,4 @@
 
 <pilihan-rekening (pilihan)="pilihRekening($event)"></pilihan-rekening>
 
-<div *ngIf="pilihanRekening">
-    {{pilihanRekening.nomor}} a.n {{pilihanRekening.nama}} saldonya Rp. 123.456,90
-</div>
+<detail-rekening [rekening]="pilihanRekening"></detail-rekening>

@@ -1,0 +1,19 @@
+<div *ngIf="!rekening">
+    Rekening belum dipilih
+</div>
+<div *ngIf="rekening">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Nomor Rekening</label>
+            <div class="col-sm-4">
+                <p class="form-control-static">{{rekening.nomor}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Nama Rekening</label>
+            <div class="col-sm-4">
+                <p class="form-control-static">{{rekening.nama}}</p>
+            </div>
+        </div>
+    </form>
+</div>

@@ -10,6 +10,7 @@ import { SaldoRekeningComponent } from './saldo-rekening/saldo-rekening.componen
 import { MutasiRekeningComponent } from './mutasi-rekening/mutasi-rekening.component';
 import { PilihanRekeningComponent } from './pilihan-rekening/pilihan-rekening.component';
 import { RekeningService } from './rekening.service';
+import { DetailRekeningComponent } from './detail-rekening/detail-rekening.component';
 
 const routingRekening: Route[] = [
   { path: 'rekening/list', component: DaftarRekeningComponent },
@@ -27,7 +28,8 @@ const routingRekening: Route[] = [
     DaftarRekeningComponent,
     SaldoRekeningComponent,
     MutasiRekeningComponent,
-    PilihanRekeningComponent
+    PilihanRekeningComponent,
+    DetailRekeningComponent
   ],
   exports: [
     PilihanRekeningComponent

@@ -9,7 +9,7 @@ import { Rekening } from '../rekening.model';
 })
 export class SaldoRekeningComponent implements OnInit {
 
-  pilihanRekening : Rekening = new Rekening("r99", "4321", "Rekening 4321");
+  pilihanRekening : Rekening;
 
   constructor() { }
 
