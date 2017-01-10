@@ -2,8 +2,8 @@ export class Rekening {
 
   constructor(
     public id: string,
-    public nomer: string,
+    public nomor: string,
     public nama: string){
-      
+
   }
 }

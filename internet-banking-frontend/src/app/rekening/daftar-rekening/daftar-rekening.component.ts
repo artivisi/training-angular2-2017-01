@@ -14,7 +14,12 @@ export class DaftarRekeningComponent implements OnInit {
 
   constructor(private rekeningService: RekeningService) {
     rekeningService.ambilDataRekening()
-    .then(hasil => this.daftarRekening = hasil);
+    .then(hasil => this.daftarRekening = hasil)
+    .catch(this.handleError);
+  }
+
+  private handleError(errors: any): void {
+      console.log("Terjadi error : "+errors);
   }
 
   tampilkanDetail(rek: Rekening){

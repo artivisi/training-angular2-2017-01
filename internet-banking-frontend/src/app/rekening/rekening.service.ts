@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
 
+import { Headers, Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+
 import { Rekening } from './rekening.model';
 
 @Injectable()
 export class RekeningService {
 
-  constructor() { }
+  private serverUrl = 'api/rekening/';
+
+  constructor(private httpClient: Http) { }
 
   ambilDataRekening(): Promise<Rekening[]> {
-    let hasil: Rekening[] = [
-      new Rekening("r001", '1234567890', 'Tabungan Endy Muhardin'),
-      new Rekening("r002", '0987654321', 'Giro Endy Muhardin')
-    ]
+    return this.httpClient.get(this.serverUrl)
+    .toPromise()
+    .then(hasil => hasil.json() as Rekening[])
+    .catch(this.handleError);
+  }
 
-    return new Promise(resolve => {
-      setTimeout(() => resolve(hasil), 2000);
-    });
+  private handleError(error: any) : Promise<any> {
+      //console.error(error.message || error);
+      return Promise.reject(error.message || error);
   }
 }
