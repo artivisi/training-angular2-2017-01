@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Rekening } from '../rekening.model';
 import { RekeningService } from '../rekening.service';
@@ -11,6 +11,7 @@ import { RekeningService } from '../rekening.service';
 export class PilihanRekeningComponent implements OnInit {
 
   daftarRekening : Rekening[];
+  @Output() pilihan = new EventEmitter<Rekening>();
 
   constructor(private rekeningService : RekeningService) {
       rekeningService.ambilDataRekening()
@@ -20,6 +21,11 @@ export class PilihanRekeningComponent implements OnInit {
 
   private handleError(errors: any): void {
       console.log("Terjadi error : "+errors);
+  }
+
+  pilih(r : Rekening){
+      console.log("Rekening dipilih : "+r.nama);
+      this.pilihan.emit(r);
   }
 
   ngOnInit() {

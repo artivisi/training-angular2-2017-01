@@ -4,7 +4,7 @@
   </button>
   <ul dropdownMenu role="menu" aria-labelledby="single-button">
     <li role="menuitem" *ngFor="let r of daftarRekening">
-        <a class="dropdown-item" href="#">
+            <a class="dropdown-item" (click)="pilih(r)">
             {{r.nomor}} - {{r.nama}}
         </a>
     </li>

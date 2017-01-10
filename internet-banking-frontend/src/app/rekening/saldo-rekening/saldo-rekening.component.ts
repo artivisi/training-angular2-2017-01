@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Rekening } from '../rekening.model';
+
 @Component({
   selector: 'app-saldo-rekening',
   templateUrl: './saldo-rekening.component.html',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaldoRekeningComponent implements OnInit {
 
+  pilihanRekening : Rekening = new Rekening("r99", "4321", "Rekening 4321");
+
   constructor() { }
+
+  pilihRekening(rek : Rekening){
+      this.pilihanRekening = rek;
+  }
 
   ngOnInit() {
   }
