@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route }   from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 import { RekeningModule } from '../rekening/rekening.module';
 
 import { InputTransferComponent } from './input-transfer/input-transfer.component';
@@ -15,6 +15,7 @@ const routingTransfer: Route[] = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routingTransfer),
     RekeningModule
   ],

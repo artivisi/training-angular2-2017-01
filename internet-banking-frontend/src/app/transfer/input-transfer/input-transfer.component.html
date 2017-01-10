@@ -1,5 +1,49 @@
 <h1>Input Transfer</h1>
 
-<pilihan-rekening></pilihan-rekening>
+<p>
+Debug : {{debugForm}}
+</p>
 
-<button class="btn btn-primary" (click)="lakukanTransfer()">Transfer</button>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Sumber</label>
+    <div class="col-sm-6">
+      <pilihan-rekening (pilihan)="ubahRekeningSumber($event)"></pilihan-rekening>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-6 control-label">Nama Rekening Sumber</label>
+    <div class="col-sm-6">
+      <p *ngIf="transfer.sumber" class="form-control-static">{{transfer.sumber.nomor}} - {{transfer.sumber.nama}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Tujuan</label>
+    <div class="col-sm-6">
+      <pilihan-rekening (pilihan)="ubahRekeningTujuan($event)"></pilihan-rekening>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="rekeningTujuan" class="col-sm-6 control-label">Nama Rekening Tujuan</label>
+    <div class="col-sm-6">
+      <p *ngIf="transfer.tujuan" class="form-control-static">{{transfer.tujuan.nomor}} - {{transfer.tujuan.nama}}</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nilai" class="col-sm-6 control-label">Nilai</label>
+    <div class="col-sm-6">
+      <input [(ngModel)]="transfer.nilai" name="nilai" class="form-control" id="nilai" placeholder="Rp. 123.456,90">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="berita" class="col-sm-6 control-label">Berita</label>
+    <div class="col-sm-6">
+      <input [(ngModel)]="transfer.berita" name="berita" class="form-control" id="berita" placeholder="Berita">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-6 col-sm-6">
+      <button class="btn btn-default" (click)="lakukanTransfer()">Transfer</button>
+    </div>
+  </div>
+</form>
