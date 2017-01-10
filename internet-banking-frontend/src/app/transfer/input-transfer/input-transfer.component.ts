@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router }   from '@angular/router';
 
-import { InputTransfer } from '../transfer.model';
+import { Transfer } from '../transfer.model';
 
 import { Rekening } from '../../rekening/rekening.model';
 
@@ -13,8 +13,8 @@ import { Rekening } from '../../rekening/rekening.model';
 })
 export class InputTransferComponent implements OnInit {
 
-  transfer = new InputTransfer(undefined, undefined, 0, '');
-  
+  transfer = new Transfer(undefined, undefined, 0, '');
+
   constructor(private router: Router) { }
 
   ngOnInit() {
