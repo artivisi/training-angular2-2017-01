@@ -3,3 +3,9 @@
 <pilihan-rekening (pilihan)="pilihRekening($event)"></pilihan-rekening>
 
 <detail-rekening [rekening]="pilihanRekening"></detail-rekening>
+
+
+<!-- versi alternatif, tanpa instance variable dalam .ts
+<pilihan-rekening (pilihan)="xx = $event"></pilihan-rekening>
+<detail-rekening [rekening]="xx"></detail-rekening>
+-->
