@@ -10,12 +10,12 @@ import { AppComponent } from './app.component';
 import { MenuSampingComponent } from './menu-samping/menu-samping.component';
 import { SelamatDatangComponent } from './selamat-datang/selamat-datang.component';
 import { RekeningModule } from './rekening/rekening.module';
-import { TransferComponent } from './transfer/transfer.component';
+import { TransferModule } from './transfer/transfer.module';
 import { ProfilComponent } from './profil/profil.component';
 
 const routingAplikasi: Route[] = [
   { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full' },
-  { path: 'transfer', component: TransferComponent },
+  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
   { path: 'profil', component: ProfilComponent },
   { path: '**', component: SelamatDatangComponent }
 ];
@@ -25,7 +25,6 @@ const routingAplikasi: Route[] = [
     AppComponent,
     MenuSampingComponent,
     SelamatDatangComponent,
-    TransferComponent,
     ProfilComponent
   ],
   imports: [
@@ -34,7 +33,8 @@ const routingAplikasi: Route[] = [
     HttpModule,
     RouterModule.forRoot(routingAplikasi),
     AccordionModule.forRoot(),
-    RekeningModule
+    RekeningModule,
+    TransferModule
   ],
   providers: [],
   bootstrap: [AppComponent]
