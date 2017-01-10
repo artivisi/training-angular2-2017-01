@@ -86,3 +86,15 @@ Daftar Modul dan Komponen
 ![Arsitektur Aplikasi Angular 2](catatan/img/arsitektur-aplikasi-angular2.jpg)
 
 * [Cara membuat modul](catatan/membuat-modul.md)
+
+## HTTP Request ke Backend ##
+
+Pada waktu melakukan HTTP Request ke backend yang berbeda host/port, harus memperhatikan [masalah CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
+
+Supaya kita tidak terkena masalah CORS, sebaiknya menggunakan proxy seperti ini
+
+![CORS vs Proxy](catatan/img/cors-vs-proxy.jpg)
+
+Demikian juga waktu deploy ke production, sebaiknya menggunakan reverse proxy atau load balancer seperti ini
+
+![Reverse Proxy](catatan/img/reverse-proxy.jpg)
