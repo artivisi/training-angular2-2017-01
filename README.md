@@ -98,3 +98,28 @@ Supaya kita tidak terkena masalah CORS, sebaiknya menggunakan proxy seperti ini
 Demikian juga waktu deploy ke production, sebaiknya menggunakan reverse proxy atau load balancer seperti ini
 
 ![Reverse Proxy](catatan/img/reverse-proxy.jpg)
+
+Konfigurasi proxy di `angular-cli` dilakukan dengan membuat file `proxy.conf.json` di root folder project. Isinya sebagai berikut
+
+```json
+{
+  "/api": {
+    "target": "http://localhost:8080",
+    "pathRewrite": {"^/api" : ""},
+    "secure": false
+  }
+}
+```
+File ini digunakan pada waktu menjalankan `ng-serve` sebagai berikut
+
+```
+ng serve --proxy-config proxy.conf.json
+```
+
+Outputnya seperti ini
+
+```
+** NG Live Development Server is running on http://localhost:4200. **
+ 10% building modules 2/2 modules 0 active[HPM] Proxy created: /api  ->  http://localhost:8080
+[HPM] Proxy rewrite rule created: "^/api" ~> ""
+```
