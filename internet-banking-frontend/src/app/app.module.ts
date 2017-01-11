@@ -13,6 +13,8 @@ import { RekeningModule } from './rekening/rekening.module';
 import { TransferModule } from './transfer/transfer.module';
 import { ProfilComponent } from './profil/profil.component';
 
+import { ProgressIndicatorService } from './progress-indicator.service';
+
 const routingAplikasi: Route[] = [
   { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full' },
   { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
@@ -36,7 +38,7 @@ const routingAplikasi: Route[] = [
     RekeningModule,
     TransferModule
   ],
-  providers: [],
+  providers: [ProgressIndicatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

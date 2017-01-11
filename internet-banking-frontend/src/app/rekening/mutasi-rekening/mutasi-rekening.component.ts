@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ProgressIndicatorService } from '../../progress-indicator.service';
+
 @Component({
   selector: 'app-mutasi-rekening',
   templateUrl: './mutasi-rekening.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MutasiRekeningComponent implements OnInit {
 
-  constructor() { }
+  constructor(private progress : ProgressIndicatorService) { }
 
   ngOnInit() {
   }
 
+  showNotification(){
+      this.progress.toggleIndicator("Halo");
+  }
+
+  hideNotification(){
+      this.progress.toggleIndicator(null);
+  }
 }

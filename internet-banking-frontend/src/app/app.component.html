@@ -38,13 +38,12 @@
 </nav>
 
 <div class="container">
-
   <div class="row">
     <div class="col-md-4">
       <menu-samping></menu-samping>
     </div>
     <div class="col-md-8">
+        <h2 *ngIf="notification">{{notification}}</h2>
       <router-outlet></router-outlet>
     </div>
-
   </div> <!-- /container -->
