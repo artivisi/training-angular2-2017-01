@@ -16,6 +16,8 @@ export class MutasiRekeningComponent implements OnInit {
 
   showNotification(){
       this.progress.toggleIndicator("Halo");
+
+      setTimeout(() => this.progress.toggleIndicator(null), 3000);
   }
 
   hideNotification(){

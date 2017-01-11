@@ -43,7 +43,25 @@
       <menu-samping></menu-samping>
     </div>
     <div class="col-md-8">
-        <h2 *ngIf="notification">{{notification}}</h2>
+
       <router-outlet></router-outlet>
     </div>
   </div> <!-- /container -->
+
+<!-- static modal dialog -->
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Static modal</h4>
+      </div>
+      <div class="modal-body">
+        <h2 *ngIf="notification">{{notification}}</h2>
+      </div>
+    </div>
+  </div>
+</div>

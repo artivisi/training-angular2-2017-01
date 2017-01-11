@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Route }   from '@angular/router';
 
 import { AccordionModule } from 'ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { MenuSampingComponent } from './menu-samping/menu-samping.component';
@@ -35,6 +36,7 @@ const routingAplikasi: Route[] = [
     HttpModule,
     RouterModule.forRoot(routingAplikasi),
     AccordionModule.forRoot(),
+    ModalModule.forRoot(),
     RekeningModule,
     TransferModule
   ],

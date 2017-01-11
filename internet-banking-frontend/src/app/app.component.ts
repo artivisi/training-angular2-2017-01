@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ProgressIndicatorService } from './progress-indicator.service';
 
@@ -12,12 +12,22 @@ export class AppComponent implements OnInit, OnDestroy {
   notification : string;
   subscription: Subscription;
 
+  @ViewChild("staticModal") staticModal;
+
   constructor(private progress : ProgressIndicatorService ) {
 
   }
 
   ngOnInit(){
-    this.subscription = this.progress.getStatus().subscribe(data => this.notification = data);
+    this.subscription = this.progress.getStatus().subscribe(data => {
+        this.notification = data;
+        if(data) {
+            this.staticModal.show();
+        } else {
+            this.staticModal.hide();
+        }
+
+    });
   }
 
   ngOnDestroy(){
