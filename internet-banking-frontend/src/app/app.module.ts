@@ -18,12 +18,12 @@ import { ProgressIndicatorService } from './progress-indicator.service';
 import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './auth.service';
-import { AuthGuard } from './ceklogin-service';
+import { CekLoginGuard } from './ceklogin.service';
 
 const routingAplikasi: Route[] = [
-  { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full', canActivate: [AuthGuard] },
-  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full', canActivate: [AuthGuard] },
-  { path: 'profil', component: ProfilComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full', canActivate: [CekLoginGuard] },
+  { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full', canActivate: [CekLoginGuard] },
+  { path: 'profil', component: ProfilComponent, pathMatch: 'full', canActivate: [CekLoginGuard] },
   { path: 'login', component: LoginComponent },
   { path: '**', component: SelamatDatangComponent }
 ];
@@ -46,7 +46,7 @@ const routingAplikasi: Route[] = [
     RekeningModule,
     TransferModule
   ],
-  providers: [ProgressIndicatorService, AuthGuard, AuthService],
+  providers: [ProgressIndicatorService, CekLoginGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
