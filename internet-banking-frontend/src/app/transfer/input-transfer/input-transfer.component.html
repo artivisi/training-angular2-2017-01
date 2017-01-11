@@ -8,25 +8,25 @@ Debug : {{debugForm}}
   <div class="form-group">
     <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Sumber</label>
     <div class="col-sm-6">
-      <pilihan-rekening (pilihan)="transfer.sumber = $event"></pilihan-rekening>
+      <pilihan-rekening (pilihan)="transfer.rekeningSumber = $event"></pilihan-rekening>
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-6 control-label">Nama Rekening Sumber</label>
     <div class="col-sm-6">
-      <p *ngIf="transfer.sumber" class="form-control-static">{{transfer.sumber.nomor}} - {{transfer.sumber.nama}}</p>
+      <p *ngIf="transfer.sumber" class="form-control-static">{{transfer.rekeningSumber.nomor}} - {{transfer.sumber.nama}}</p>
     </div>
   </div>
   <div class="form-group">
     <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Tujuan</label>
     <div class="col-sm-6">
-      <pilihan-rekening (pilihan)="transfer.tujuan = $event"></pilihan-rekening>
+      <pilihan-rekening (pilihan)="transfer.rekeningTujuan = $event"></pilihan-rekening>
     </div>
   </div>
   <div class="form-group">
     <label for="rekeningTujuan" class="col-sm-6 control-label">Nama Rekening Tujuan</label>
     <div class="col-sm-6">
-      <p *ngIf="transfer.tujuan" class="form-control-static">{{transfer.tujuan.nomor}} - {{transfer.tujuan.nama}}</p>
+      <p *ngIf="transfer.tujuan" class="form-control-static">{{transfer.rekeningTujuan.nomor}} - {{transfer.tujuan.nama}}</p>
     </div>
   </div>
   <div class="form-group">

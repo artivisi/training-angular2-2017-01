@@ -7,6 +7,8 @@ import { RekeningModule } from '../rekening/rekening.module';
 import { InputTransferComponent } from './input-transfer/input-transfer.component';
 import { KonfirmasiTransferComponent } from './konfirmasi-transfer/konfirmasi-transfer.component';
 
+import { TransferService } from './transfer.service';
+
 const routingTransfer: Route[] = [
   { path: 'transfer/konfirmasi', component: KonfirmasiTransferComponent },
   { path: 'transfer/input', component: InputTransferComponent }
@@ -19,6 +21,7 @@ const routingTransfer: Route[] = [
     RouterModule.forChild(routingTransfer),
     RekeningModule
   ],
-  declarations: [InputTransferComponent, KonfirmasiTransferComponent]
+  declarations: [InputTransferComponent, KonfirmasiTransferComponent],
+  providers: [ TransferService ]
 })
 export class TransferModule { }
