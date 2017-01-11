@@ -1,0 +1,6 @@
+{
+    "rekeningSumber" : { "id" : "r001" },
+    "rekeningTujuan" : { "id" : "r002" },
+    "nilai" : 123000,
+    "berita" : "Test Transfer 001"
+}
