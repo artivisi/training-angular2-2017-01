@@ -25,6 +25,13 @@ export class AuthService {
       return this.currentUser != null;
   }
 
+  getCurrentUser(){
+      if(this.sudahLogin()){
+          return this.currentUser;
+      }
+      return null;
+  }
+
   login(username : string, password : string) {
       let params: URLSearchParams = new URLSearchParams();
       params.set('client_id', "internetbanking");
