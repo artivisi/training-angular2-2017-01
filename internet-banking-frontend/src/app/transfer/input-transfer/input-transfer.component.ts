@@ -24,14 +24,6 @@ export class InputTransferComponent implements OnInit {
       this.router.navigate(['transfer/konfirmasi']);
   }
 
-  ubahRekeningSumber(r : Rekening) {
-      this.transfer.sumber = r;
-  }
-
-  ubahRekeningTujuan(r : Rekening) {
-      this.transfer.tujuan = r;
-  }
-
   get debugForm(){
       return JSON.stringify(this.transfer);
   }

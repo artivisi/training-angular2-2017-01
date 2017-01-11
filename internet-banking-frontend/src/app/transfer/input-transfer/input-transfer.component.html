@@ -8,7 +8,7 @@ Debug : {{debugForm}}
   <div class="form-group">
     <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Sumber</label>
     <div class="col-sm-6">
-      <pilihan-rekening (pilihan)="ubahRekeningSumber($event)"></pilihan-rekening>
+      <pilihan-rekening (pilihan)="transfer.sumber = $event"></pilihan-rekening>
     </div>
   </div>
   <div class="form-group">
@@ -20,7 +20,7 @@ Debug : {{debugForm}}
   <div class="form-group">
     <label for="rekeningSumber" class="col-sm-6 control-label">Rekening Tujuan</label>
     <div class="col-sm-6">
-      <pilihan-rekening (pilihan)="ubahRekeningTujuan($event)"></pilihan-rekening>
+      <pilihan-rekening (pilihan)="transfer.tujuan = $event"></pilihan-rekening>
     </div>
   </div>
   <div class="form-group">
