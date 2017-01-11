@@ -15,11 +15,13 @@ import { TransferModule } from './transfer/transfer.module';
 import { ProfilComponent } from './profil/profil.component';
 
 import { ProgressIndicatorService } from './progress-indicator.service';
+import { LoginComponent } from './login/login.component';
 
 const routingAplikasi: Route[] = [
   { path: 'rekening', redirectTo: '/rekening', pathMatch: 'full' },
   { path: 'transfer', redirectTo: '/transfer', pathMatch: 'full' },
   { path: 'profil', component: ProfilComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: SelamatDatangComponent }
 ];
 
@@ -28,7 +30,8 @@ const routingAplikasi: Route[] = [
     AppComponent,
     MenuSampingComponent,
     SelamatDatangComponent,
-    ProfilComponent
+    ProfilComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
