@@ -123,3 +123,89 @@ Outputnya seperti ini
  10% building modules 2/2 modules 0 active[HPM] Proxy created: /api  ->  http://localhost:8080
 [HPM] Proxy rewrite rule created: "^/api" ~> ""
 ```
+
+## Komunikasi Antar Komponen ##
+
+Komponen satu mengirim data ke komponen lain melalui berbagai cara, antara lain:
+
+* Menggunakan `@Input` dan `@Output`
+* Menggunakan `Observable`
+
+### Komunikasi dengan Observable ###
+
+Mekanisme :
+
+* buat service yang berisi `Subject`. Ini adalah class yang disediakan `RxJs`.
+* Komponen B subscribe ke `Observable` yang diambil dari `Subject`
+* Komponen A mengirim data ke `Subject` dengan method `next`
+* Komponen B menerima data dari `Observable`, karena dia sudah subscribe
+
+Gambarnya seperti ini
+
+![Komunikasi dengan Observable](catatan/img/komunikasi-dengan-observable.jpg)
+
+Contoh service berisi subject
+
+```ts
+@Injectable()
+export class ProgressIndicatorService {
+
+  private status = new Subject<any>();
+
+  getStatus() : Observable<any> {
+    return this.status.asObservable();
+  }
+
+  toggleIndicator(data : any){
+    this.status.next(data);
+  }
+
+  constructor() { }
+
+}
+```
+
+Contoh komponen yang mengirim data
+
+```ts
+export class MutasiRekeningComponent implements OnInit {
+
+  constructor(private progress : ProgressIndicatorService) { }
+
+  showNotification(){
+      this.progress.toggleIndicator("Halo");
+      setTimeout(() => this.progress.toggleIndicator(null), 3000);
+  }
+
+  hideNotification(){
+      this.progress.toggleIndicator(null);
+  }
+}
+```
+
+Contoh komponen yang menerima data
+
+```ts
+export class AppComponent implements OnInit, OnDestroy {
+  notification : string;
+  subscription: Subscription;
+  @ViewChild("staticModal") staticModal;
+
+  constructor(private progress : ProgressIndicatorService ) { }
+
+  ngOnInit(){
+    this.subscription = this.progress.getStatus().subscribe(data => {
+        this.notification = data;
+        if(data) {
+            this.staticModal.show();
+        } else {
+            this.staticModal.hide();
+        }
+    });
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
+}
+```
